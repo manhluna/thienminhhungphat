@@ -1,0 +1,26 @@
+<nav class="navbar navbar-default bootsnav"> 
+   <div class="attr-nav"> 
+    <ul> 
+     <li class="dropdown">
+
+      <ul class="dropdown-menu cart-list">
+        <% carts.forEach((item) => { %>
+          <li id="<%= item.time %>"> <a href="#" class="photo"><img src="<%= item.img %>" class="cart-thumb" alt="<%= item.name %>"></a> 
+            <h6><a href="#"><%= item.name %></a>
+            </h6> 
+            <p><span id="x_<%= item.time %>"><%= item.amount %></span>x - <span class="price"><%= item.pay/1000 %> Kđ</span>
+            </p> 
+           </li>
+        <% }) %>
+       
+       <li class="total"> 
+         <span class="pull-right"><strong>&nbsp;&nbsp;&nbsp;Tổng tiền:&nbsp;&nbsp;</strong><span class="price"><span class="price" id="cart_total"><%= total%></span> Kđ</span></span>
+         <a href="/mycart" class="btn">
+          <i class="fa fa-cart-plus"></i>
+        </a> 
+       </li> 
+      </ul> 
+     </li> 
+    </ul> 
+   </div>
+ </nav> 
