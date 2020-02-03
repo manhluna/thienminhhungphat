@@ -18,7 +18,6 @@ const session = require('express-session')({
 const flash = require('connect-flash')
 const passport = require('passport')
 const LocalStrategy = require('passport-local').Strategy
-const authNormal = require('./authentic/normal')
 const sharedsession = require("express-socket.io-session")
 
 
@@ -48,7 +47,6 @@ app.set('views', './frontend/template/')
 restUser(app)
 restAdmin(app)
 
-authNormal(passport)
 
 io.use(sharedsession(session, {
   autoSave:true
